@@ -31,12 +31,16 @@ function App() {
     setMoneyRemaining(moneyRemaining - sushi.price)
   }
 
+  function handleAddMoreMoney(funds) {
+    setMoneyRemaining(moneyRemaining + funds)
+  }
+
   
 
   return (
     <div className="app">
       <SushiContainer sushiArray={sushiArray.slice(indexOne, indexOne + displayAmount)} showMoreSushi={handleShowMoreSushi} eatSushi={handleEatSushi} moneyRemaining={moneyRemaining}/>
-      <Table plates={plates} moneyRemaining={moneyRemaining}/>
+      <Table plates={plates} moneyRemaining={moneyRemaining} addMoreMoney={handleAddMoreMoney}/>
     </div>
   );
 }
